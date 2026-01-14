@@ -1,0 +1,11 @@
+*
+!/src/
+!/src/config/
+!/src/config/dhcp.template
+!/src/config/dropbear.template
+!/src/config/firewall.template
+!/src/config/network.template
+!/src/config/system.template
+!/src/config/wireless.template
+!/.gitignore
+!/Makefile
