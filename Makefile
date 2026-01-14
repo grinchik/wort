@@ -68,6 +68,8 @@ build/config/wireless: \
 	#
 	LAN_AP_SSID="$$(cat $(LAN_AP_SSID_FILE_PATH))" \
 	LAN_AP_KEY="$$(cat $(LAN_AP_KEY_FILE_PATH))" \
+	GUEST_AP_SSID="$$(cat $(GUEST_AP_SSID_FILE_PATH))" \
+	GUEST_AP_KEY="$$(cat $(GUEST_AP_KEY_FILE_PATH))" \
 		envsubst \
 			< "$<" \
 			> "$@" \
