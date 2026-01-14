@@ -66,10 +66,10 @@ build/config/wireless: \
 	src/config/wireless.template \
 	| build/config \
 	#
-	LAN_AP_SSID="$$(cat $(LAN_AP_SSID_FILE_PATH))" \
-	LAN_AP_KEY="$$(cat $(LAN_AP_KEY_FILE_PATH))" \
-	GUEST_AP_SSID="$$(cat $(GUEST_AP_SSID_FILE_PATH))" \
-	GUEST_AP_KEY="$$(cat $(GUEST_AP_KEY_FILE_PATH))" \
+	AP_LAN_SSID="$$(cat $(AP_LAN_SSID_FILE_PATH))" \
+	AP_LAN_KEY="$$(cat $(AP_LAN_KEY_FILE_PATH))" \
+	AP_GUEST_SSID="$$(cat $(AP_GUEST_SSID_FILE_PATH))" \
+	AP_GUEST_KEY="$$(cat $(AP_GUEST_KEY_FILE_PATH))" \
 		envsubst \
 			< "$<" \
 			> "$@" \
