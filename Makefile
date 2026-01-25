@@ -1,3 +1,5 @@
+include credentials.mk
+
 .PHONY: clean
 clean: \
 	#
@@ -66,10 +68,10 @@ build/config/wireless: \
 	src/config/wireless.template \
 	| build/config \
 	#
-	AP_LAN_SSID="$$(cat $(AP_LAN_SSID_FILE_PATH))" \
-	AP_LAN_KEY="$$(cat $(AP_LAN_KEY_FILE_PATH))" \
-	AP_GUEST_SSID="$$(cat $(AP_GUEST_SSID_FILE_PATH))" \
-	AP_GUEST_KEY="$$(cat $(AP_GUEST_KEY_FILE_PATH))" \
+	AP_LAN_SSID="$(AP_LAN_SSID)" \
+	AP_LAN_KEY="$(AP_LAN_KEY)" \
+	AP_GUEST_SSID="$(AP_GUEST_SSID)" \
+	AP_GUEST_KEY="$(AP_GUEST_KEY)" \
 		envsubst \
 			< "$<" \
 			> "$@" \

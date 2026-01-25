@@ -12,14 +12,19 @@ Personal OpenWrt 24.10 configuration files.
 
 ## Build
 
-WiFi credentials are substituted from files at build time:
+Create a `credentials.mk` file with WiFi credentials:
+
+```
+AP_LAN_SSID=MyNetwork
+AP_LAN_KEY=MyNetworkPassword
+AP_GUEST_SSID=GuestNetwork
+AP_GUEST_KEY=GuestNetworkPassword
+```
+
+Then run:
 
 ```sh
-make build \
-  AP_LAN_SSID_FILE_PATH=AP_LAN_SSID.txt \
-  AP_LAN_KEY_FILE_PATH=AP_LAN_KEY.txt \
-  AP_GUEST_SSID_FILE_PATH=AP_GUEST_SSID.txt \
-  AP_GUEST_KEY_FILE_PATH=AP_GUEST_KEY.txt
+make build
 ```
 
 Output goes to `build/config/`.
