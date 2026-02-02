@@ -68,6 +68,7 @@ build/config/wireless: \
 	src/config/wireless.template \
 	| build/config \
 	#
+	AP_COUNTRY="$(AP_COUNTRY)" \
 	AP_LAN_SSID="$(AP_LAN_SSID)" \
 	AP_LAN_KEY="$(AP_LAN_KEY)" \
 	AP_GUEST_SSID="$(AP_GUEST_SSID)" \

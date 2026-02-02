@@ -10,7 +10,7 @@ config wifi-device 'radio1'
 	option band '5g'
 	option channel 'auto'
 	option htmode 'HE80'
-	option country 'LT'
+	option country '${AP_COUNTRY}'
 	option cell_density '0'
 
 config wifi-iface 'default_radio1'
