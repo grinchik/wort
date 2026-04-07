@@ -1,9 +1,10 @@
 # wort
 
-Personal OpenWrt 24.10 configuration files.
+Personal OpenWrt 25.12 configuration files.
 
 ## Key Settings
 
+- LAN via ethernet only
 - 5GHz WiFi only (2.4GHz disabled)
 - WPA3 (SAE) encryption only
 - WiFi network with client isolation, blocked from LAN and private subnets
@@ -19,8 +20,8 @@ ROUTER_IP=192.168.1.1
 ROOT_PASSWORD=MyRootPassword
 SSH_PUBLIC_KEY_FILEPATH=/home/username/.ssh/id_ed25519.pub
 AP_COUNTRY=LT
-AP_SSID=GuestNetwork
-AP_KEY=GuestNetworkPassword
+AP_SSID=MyNetworkName
+AP_KEY=MyNetworkPassword
 ```
 
 Then run:
