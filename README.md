@@ -12,9 +12,13 @@ Personal OpenWrt 24.10 configuration files.
 
 ## Build
 
-Create a `credentials.mk` file with WiFi credentials:
+Create a `credentials.mk` file:
 
 ```
+ROUTER_IP=192.168.1.1
+ROOT_PASSWORD=MyRootPassword
+SSH_PUBLIC_KEY_FILEPATH=/home/username/.ssh/id_ed25519.pub
+AP_COUNTRY=LT
 AP_LAN_SSID=MyNetwork
 AP_LAN_KEY=MyNetworkPassword
 AP_GUEST_SSID=GuestNetwork
@@ -29,6 +33,18 @@ make build
 
 Output goes to `build/config/`.
 
+## Init
+
+First-time setup on a fresh install. Uploads the SSH public key, sets the root password, then deploys configs:
+
+```sh
+make init
+```
+
 ## Deploy
 
-Copy `build/config/` files to `/etc/config/` on the router and reboot it.
+Uploads configs to the router and reboots it:
+
+```sh
+make deploy
+```

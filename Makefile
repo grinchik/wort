@@ -1,5 +1,41 @@
 include credentials.mk
 
+.PHONY: init
+init: \
+	#
+	scp \
+		-O \
+		"$(SSH_PUBLIC_KEY_FILEPATH)" \
+		"root@$(ROUTER_IP):/etc/dropbear/authorized_keys" \
+		;
+
+	ssh \
+		"root@$(ROUTER_IP)" \
+		"echo -e '$(ROOT_PASSWORD)\n$(ROOT_PASSWORD)' | passwd root" \
+		;
+
+	$(MAKE) deploy;
+
+.PHONY: deploy
+deploy: \
+	build \
+	#
+	scp \
+		-O \
+		build/config/dhcp \
+		build/config/dropbear \
+		build/config/firewall \
+		build/config/network \
+		build/config/system \
+		build/config/wireless \
+		"root@$(ROUTER_IP):/etc/config/" \
+		;
+
+	ssh \
+		"root@$(ROUTER_IP)" \
+		reboot \
+		;
+
 .PHONY: clean
 clean: \
 	#
