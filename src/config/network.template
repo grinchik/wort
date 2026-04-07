@@ -7,14 +7,8 @@ config interface 'loopback'
 config globals 'globals'
 	option packet_steering '1'
 
-config device
-	option name 'br-lan'
-	option type 'bridge'
-	list ports 'eth1'
-	list ports 'phy1-ap0'
-
 config interface 'lan'
-	option device 'br-lan'
+	option device 'eth1'
 	option proto 'static'
 	option ipaddr '192.168.1.1'
 	option netmask '255.255.255.0'
