@@ -6,7 +6,7 @@ Personal OpenWrt 24.10 configuration files.
 
 - 5GHz WiFi only (2.4GHz disabled)
 - WPA3 (SAE) encryption only
-- Guest network with client isolation, blocked from LAN and private subnets
+- WiFi network with client isolation, blocked from LAN and private subnets
 - IPv6 disabled
 - Hardened firewall (default drop, syn flood protection)
 
@@ -19,10 +19,8 @@ ROUTER_IP=192.168.1.1
 ROOT_PASSWORD=MyRootPassword
 SSH_PUBLIC_KEY_FILEPATH=/home/username/.ssh/id_ed25519.pub
 AP_COUNTRY=LT
-AP_LAN_SSID=MyNetwork
-AP_LAN_KEY=MyNetworkPassword
-AP_GUEST_SSID=GuestNetwork
-AP_GUEST_KEY=GuestNetworkPassword
+AP_SSID=GuestNetwork
+AP_KEY=GuestNetworkPassword
 ```
 
 Then run:

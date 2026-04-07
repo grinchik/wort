@@ -17,7 +17,7 @@ config interface 'wan'
 	option device 'eth0'
 	option proto 'dhcp'
 
-config interface 'guest'
+config interface 'wifi'
 	option proto 'static'
 	option ipaddr '192.168.2.1'
 	option netmask '255.255.255.0'

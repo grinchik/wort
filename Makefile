@@ -105,8 +105,8 @@ build/config/wireless: \
 	| build/config \
 	#
 	AP_COUNTRY="$(AP_COUNTRY)" \
-	AP_GUEST_SSID="$(AP_GUEST_SSID)" \
-	AP_GUEST_KEY="$(AP_GUEST_KEY)" \
+	AP_SSID="$(AP_SSID)" \
+	AP_KEY="$(AP_KEY)" \
 		envsubst \
 			< "$<" \
 			> "$@" \

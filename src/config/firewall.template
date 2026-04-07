@@ -44,26 +44,26 @@ config rule
 	option limit '1/sec'
 
 config zone
-	option name 'guest'
-	list network 'guest'
+	option name 'wifi'
+	list network 'wifi'
 	option input 'DROP'
 	option output 'ACCEPT'
 	option forward 'DROP'
 	option masq '1'
 
 config forwarding
-	option src 'guest'
+	option src 'wifi'
 	option dest 'wan'
 
 config rule
-	option name 'Allow-Guest-DHCP'
-	option src 'guest'
+	option name 'Allow-WiFi-DHCP'
+	option src 'wifi'
 	option proto 'udp'
 	option dest_port '67-68'
 	option target 'ACCEPT'
 
 config rule
-	option name 'Block-Guest-to-Private'
-	option src 'guest'
+	option name 'Block-WiFi-to-Private'
+	option src 'wifi'
 	option dest_ip '10.0.0.0/8 172.16.0.0/12 192.168.0.0/16'
 	option target 'DROP'
